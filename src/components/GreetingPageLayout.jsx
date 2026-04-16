@@ -1,12 +1,22 @@
 import React from 'react';
 
+/**
+ * @param {{
+ *   BackgroundComponent?: React.ComponentType<{ pageSpeed?: number }> | null,
+ *   backgroundGradient?: string | null,
+ *   pageSpeed?: number,
+ *   containerStyle?: React.CSSProperties,
+ *   children: React.ReactNode
+ * }} props
+ */
 const GreetingPageLayout = ({
   BackgroundComponent,
   backgroundGradient = null,
-  pageSpeed = 1,
+  pageSpeed = 0.5,
   containerStyle = {},
   children
 }) => {
+  /** @type {React.CSSProperties} */
   const defaultContainerStyle = {
     position: 'relative',
     width: '100%',
@@ -17,9 +27,9 @@ const GreetingPageLayout = ({
     justifyContent: 'center',
   };
 
+  /** @type {React.CSSProperties} */
   const finalContainerStyle = {
     ...defaultContainerStyle,
-    '--page-speed': pageSpeed,
     ...containerStyle,
   };
 

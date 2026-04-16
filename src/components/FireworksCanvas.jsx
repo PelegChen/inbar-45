@@ -6,6 +6,15 @@ const COLORS = [
   '#fd79a8', '#55efc4', '#fdcb6e', '#e17055',
 ];
 
+/**
+ * @typedef {{ x: number, y: number, vx: number, vy: number, alpha: number, color: string, r: number }} Particle
+ */
+
+/**
+ * @typedef {{ x: number, y: number, vx: number, vy: number, color: string, exploded: boolean, particles: Particle[], trail: { x: number, y: number }[] }} Shell
+ */
+
+/** @param {HTMLCanvasElement} canvas @param {number} speedMultiplier @returns {Shell} */
 function createShell(canvas, speedMultiplier) {
   const angle = (Math.random() * 60 + 60) * (Math.PI / 180);
   return {
@@ -20,6 +29,7 @@ function createShell(canvas, speedMultiplier) {
   };
 }
 
+/** @param {Shell} shell @param {number} speedMultiplier */
 function explode(shell, speedMultiplier) {
   const count = 60 + Math.floor(Math.random() * 40);
   shell.exploded = true;
@@ -38,12 +48,17 @@ function explode(shell, speedMultiplier) {
   }
 }
 
+/** @param {{ pageSpeed?: number }} props */
 const FireworksCanvas = ({ pageSpeed = 1 }) => {
-  const canvasRef = useRef(null);
+  const canvasRef = useRef(/** @type {HTMLCanvasElement | null} */ (null));
 
   useEffect(() => {
     const canvas = canvasRef.current;
+    if (!canvas) return undefined;
+
     const ctx = canvas.getContext('2d');
+    if (!ctx) return undefined;
+
     const speedMultiplier = Math.max(0.2, pageSpeed || 1);
 
     const resize = () => {
@@ -53,9 +68,11 @@ const FireworksCanvas = ({ pageSpeed = 1 }) => {
     resize();
     window.addEventListener('resize', resize);
 
+    /** @type {Shell[]} */
     let shells = [];
     let launchFrameCounter = 0;
-    let animId;
+    /** @type {number} */
+    let animId = 0;
 
     const draw = () => {
       launchFrameCounter += speedMultiplier;

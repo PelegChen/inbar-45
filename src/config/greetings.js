@@ -2,8 +2,7 @@ import FireworksCanvas from "../components/FireworksCanvas";
 
 export const greetingsConfig = [
   {
-    id: 7,
-    pageSpeed: 1,
+    pageSpeed: 0.2,
     icon: "❤️",
     heading: "ענבר, מזל טוב ליום הולדת שמח!",
     message: "לעוד שנים ארוכות של חברות!",
