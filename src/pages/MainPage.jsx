@@ -3,7 +3,7 @@ import GreetingPageLayout from '../components/GreetingPageLayout';
 import GreetingCard from '../components/GreetingCard';
 import { greetingsConfig } from '../config/greetings';
 
-const Greeting7 = () => {
+const MainPage = () => {
   const config = greetingsConfig[6];
 
   return (
@@ -22,4 +22,4 @@ const Greeting7 = () => {
   );
 };
 
-export default Greeting7;
+export default MainPage;
