@@ -109,8 +109,8 @@ const FireworksCanvas = ({ pageSpeed = 1 }) => {
           });
           ctx.globalAlpha = 1;
 
-          // Explode when going up slows
-          if (shell.vy >= -1) explode(shell);
+          // Explode slightly earlier for higher bursts
+          if (shell.vy >= -2) explode(shell);
           return true;
         }
 
