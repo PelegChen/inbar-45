@@ -3,6 +3,7 @@ import React from 'react';
 const GreetingPageLayout = ({
   BackgroundComponent,
   backgroundGradient = null,
+  pageSpeed = 1,
   containerStyle = {},
   children
 }) => {
@@ -18,6 +19,7 @@ const GreetingPageLayout = ({
 
   const finalContainerStyle = {
     ...defaultContainerStyle,
+    '--page-speed': pageSpeed,
     ...containerStyle,
   };
 
@@ -27,7 +29,7 @@ const GreetingPageLayout = ({
 
   return (
     <div style={finalContainerStyle}>
-      {BackgroundComponent && <BackgroundComponent />}
+      {BackgroundComponent && <BackgroundComponent pageSpeed={pageSpeed} />}
       {children}
     </div>
   );

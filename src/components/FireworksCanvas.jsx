@@ -6,13 +6,13 @@ const COLORS = [
   '#fd79a8', '#55efc4', '#fdcb6e', '#e17055',
 ];
 
-function createShell(canvas) {
+function createShell(canvas, speedMultiplier) {
   const angle = (Math.random() * 60 + 60) * (Math.PI / 180);
   return {
     x: Math.random() * canvas.width,
     y: canvas.height,
-    vx: Math.cos(angle) * (Math.random() * 3 - 1.5),
-    vy: -(Math.random() * 8 + 7),
+    vx: Math.cos(angle) * (Math.random() * 3 - 1.5) * speedMultiplier,
+    vy: -(Math.random() * 8 + 7) * speedMultiplier,
     color: COLORS[Math.floor(Math.random() * COLORS.length)],
     exploded: false,
     particles: [],
@@ -20,12 +20,12 @@ function createShell(canvas) {
   };
 }
 
-function explode(shell) {
+function explode(shell, speedMultiplier) {
   const count = 60 + Math.floor(Math.random() * 40);
   shell.exploded = true;
   for (let i = 0; i < count; i++) {
     const angle = (i / count) * Math.PI * 2;
-    const speed = Math.random() * 4 + 1;
+    const speed = (Math.random() * 4 + 1) * speedMultiplier;
     shell.particles.push({
       x: shell.x,
       y: shell.y,
@@ -38,12 +38,13 @@ function explode(shell) {
   }
 }
 
-const FireworksCanvas = () => {
+const FireworksCanvas = ({ pageSpeed = 1 }) => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
+    const speedMultiplier = Math.max(0.2, pageSpeed || 1);
 
     const resize = () => {
       canvas.width = canvas.offsetWidth;
@@ -53,17 +54,19 @@ const FireworksCanvas = () => {
     window.addEventListener('resize', resize);
 
     let shells = [];
-    let animationFrame = 0;
+    let launchFrameCounter = 0;
     let animId;
 
     const draw = () => {
-      animationFrame++;
+      launchFrameCounter += speedMultiplier;
       const canvasWidth = canvas.width;
       const canvasHeight = canvas.height;
+      const launchInterval = Math.max(8, 45 / speedMultiplier);
 
       // Launch a new shell every ~45 frames
-      if (animationFrame % 45 === 0 || shells.length === 0) {
-        shells.push(createShell(canvas));
+      if (launchFrameCounter >= launchInterval || shells.length === 0) {
+        launchFrameCounter = 0;
+        shells.push(createShell(canvas, speedMultiplier));
       }
 
       ctx.fillStyle = 'rgba(5,5,20,0.25)';
@@ -75,9 +78,9 @@ const FireworksCanvas = () => {
           shell.trail.push({ x: shell.x, y: shell.y });
           if (shell.trail.length > 8) shell.trail.shift();
 
-          shell.vy += 0.18; // gravity
-          shell.x += shell.vx;
-          shell.y += shell.vy;
+          shell.vy += 0.18 * speedMultiplier; // gravity
+          shell.x += shell.vx * speedMultiplier;
+          shell.y += shell.vy * speedMultiplier;
 
           // Draw trail
           shell.trail.forEach((pt, i) => {
@@ -90,17 +93,17 @@ const FireworksCanvas = () => {
           ctx.globalAlpha = 1;
 
           // Explode when going up slows
-          if (shell.vy >= -1) explode(shell);
+          if (shell.vy >= -1) explode(shell, speedMultiplier);
           return true;
         }
 
         // Update particles
         shell.particles.forEach(particle => {
-          particle.x += particle.vx;
-          particle.y += particle.vy;
-          particle.vy += 0.08;
-          particle.vx *= 0.97;
-          particle.alpha -= 0.018;
+          particle.x += particle.vx * speedMultiplier;
+          particle.y += particle.vy * speedMultiplier;
+          particle.vy += 0.08 * speedMultiplier;
+          particle.vx *= Math.pow(0.97, speedMultiplier);
+          particle.alpha -= 0.018 * speedMultiplier;
 
           if (particle.alpha > 0) {
             ctx.beginPath();
@@ -125,7 +128,7 @@ const FireworksCanvas = () => {
       cancelAnimationFrame(animId);
       window.removeEventListener('resize', resize);
     };
-  }, []);
+  }, [pageSpeed]);
 
   return (
     <>
