@@ -109,8 +109,8 @@ const FireworksCanvas = ({ pageSpeed = 1 }) => {
           });
           ctx.globalAlpha = 1;
 
-          // Explode slightly earlier for higher bursts
-          if (shell.vy >= -2) explode(shell);
+          // Explode closer to the apex so bursts happen higher.
+          if (shell.vy >= -0.2) explode(shell);
           return true;
         }
 
