@@ -14,14 +14,14 @@ const COLORS = [
  * @typedef {{ x: number, y: number, vx: number, vy: number, color: string, exploded: boolean, particles: Particle[], trail: { x: number, y: number }[] }} Shell
  */
 
-/** @param {HTMLCanvasElement} canvas @param {number} speedMultiplier @returns {Shell} */
-function createShell(canvas, speedMultiplier) {
+/** @param {HTMLCanvasElement} canvas @returns {Shell} */
+function createShell(canvas) {
   const angle = (Math.random() * 60 + 60) * (Math.PI / 180);
   return {
     x: Math.random() * canvas.width,
     y: canvas.height,
-    vx: Math.cos(angle) * (Math.random() * 3 - 1.5) * speedMultiplier,
-    vy: -(Math.random() * 8 + 7) * speedMultiplier,
+    vx: Math.cos(angle) * (Math.random() * 3 - 1.5),
+    vy: -(Math.random() * 8 + 7),
     color: COLORS[Math.floor(Math.random() * COLORS.length)],
     exploded: false,
     particles: [],
@@ -29,13 +29,13 @@ function createShell(canvas, speedMultiplier) {
   };
 }
 
-/** @param {Shell} shell @param {number} speedMultiplier */
-function explode(shell, speedMultiplier) {
+/** @param {Shell} shell */
+function explode(shell) {
   const count = 60 + Math.floor(Math.random() * 40);
   shell.exploded = true;
   for (let i = 0; i < count; i++) {
     const angle = (i / count) * Math.PI * 2;
-    const speed = (Math.random() * 4 + 1) * speedMultiplier;
+    const speed = Math.random() * 4 + 1;
     shell.particles.push({
       x: shell.x,
       y: shell.y,
@@ -78,12 +78,12 @@ const FireworksCanvas = ({ pageSpeed = 1 }) => {
       launchFrameCounter += speedMultiplier;
       const canvasWidth = canvas.width;
       const canvasHeight = canvas.height;
-      const launchInterval = Math.max(8, 45 / speedMultiplier);
+      const launchInterval = 45;
 
       // Launch a new shell every ~45 frames
       if (launchFrameCounter >= launchInterval || shells.length === 0) {
         launchFrameCounter = 0;
-        shells.push(createShell(canvas, speedMultiplier));
+        shells.push(createShell(canvas));
       }
 
       ctx.fillStyle = 'rgba(5,5,20,0.25)';
@@ -95,7 +95,7 @@ const FireworksCanvas = ({ pageSpeed = 1 }) => {
           shell.trail.push({ x: shell.x, y: shell.y });
           if (shell.trail.length > 8) shell.trail.shift();
 
-          shell.vy += 0.18 * speedMultiplier; // gravity
+          shell.vy += 0.18 * speedMultiplier; // gravity scaled by time-step
           shell.x += shell.vx * speedMultiplier;
           shell.y += shell.vy * speedMultiplier;
 
@@ -110,7 +110,7 @@ const FireworksCanvas = ({ pageSpeed = 1 }) => {
           ctx.globalAlpha = 1;
 
           // Explode when going up slows
-          if (shell.vy >= -1) explode(shell, speedMultiplier);
+          if (shell.vy >= -1) explode(shell);
           return true;
         }
 

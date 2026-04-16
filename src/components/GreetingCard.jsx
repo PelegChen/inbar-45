@@ -28,11 +28,10 @@ const GreetingCard = ({
   };
 
   const headingStyle = {
-    fontSize: headingFontSize || 'clamp(2rem, 6vw, 3.5rem)',
-    fontFamily: 'Georgia, serif',
+    fontSize: 'clamp(1.5rem, 6vw, 3.5rem)', 
     margin: '0 0 16px',
     lineHeight: 1.2,
-    color: headingColor || '#333',
+    color:  'yellow',
   };
 
   const messageStyle = {
@@ -49,6 +48,7 @@ const GreetingCard = ({
 
   return (
     <div
+      dir='rtl'
       className={containerClassName}
       style={{
         ...defaultCardStyle,
