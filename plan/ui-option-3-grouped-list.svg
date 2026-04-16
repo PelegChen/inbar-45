@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
+  <!-- Background -->
+  <rect width="1200" height="700" fill="#f8f9fa"/>
+
+  <!-- Title -->
+  <text x="600" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#1a1a2e">
+    Option 3: Grouped List with Visual Separators (Desktop)
+  </text>
+
+  <!-- Navigation Bar Background -->
+  <rect x="50" y="70" width="1100" height="320" rx="8" fill="#16213e" opacity="0.95"/>
+
+  <!-- Group 1: Celebration -->
+  <g id="group1" transform="translate(70, 90)">
+    <!-- Group Header -->
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ff4757">🎉 CELEBRATION</text>
+    <line x1="0" y1="8" x2="280" y2="8" stroke="#ff4757" stroke-width="2" opacity="0.6"/>
+
+    <!-- Links Row -->
+    <g transform="translate(0, 25)">
+      <rect x="0" y="0" width="140" height="45" rx="6" fill="#2d3748" stroke="#ff4757" stroke-width="2"/>
+      <text x="70" y="28" font-family="Arial, sans-serif" font-size="15" text-anchor="middle" fill="#ffffff">🎈 Balloons</text>
+
+      <rect x="155" y="0" width="140" height="45" rx="6" fill="#2d3748" stroke="#ff4757" stroke-width="2"/>
+      <text x="225" y="28" font-family="Arial, sans-serif" font-size="15" text-anchor="middle" fill="#ffffff">🎉 Confetti</text>
+
+      <rect x="310" y="0" width="150" height="45" rx="6" fill="#2d3748" stroke="#ff4757" stroke-width="2"/>
+      <text x="385" y="28" font-family="Arial, sans-serif" font-size="15" text-anchor="middle" fill="#ffffff">🎆 Fireworks</text>
+    </g>
+  </g>
+
+  <!-- Group 2: Nature -->
+  <g id="group2" transform="translate(70, 200)">
+    <!-- Group Header -->
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#00dfff">🌿 NATURE</text>
+    <line x1="0" y1="8" x2="280" y2="8" stroke="#00dfff" stroke-width="2" opacity="0.6"/>
+
+    <!-- Links Row -->
+    <g transform="translate(0, 25)">
+      <rect x="0" y="0" width="140" height="45" rx="6" fill="#2d3748" stroke="#00dfff" stroke-width="2"/>
+      <text x="70" y="28" font-family="Arial, sans-serif" font-size="15" text-anchor="middle" fill="#ffffff">🌅 Sunrise</text>
+
+      <rect x="155" y="0" width="130" height="45" rx="6" fill="#2d3748" stroke="#00dfff" stroke-width="2"/>
+      <text x="220" y="28" font-family="Arial, sans-serif" font-size="15" text-anchor="middle" fill="#ffffff">☁️ Clouds</text>
+
+      <rect x="300" y="0" width="130" height="45" rx="6" fill="#2d3748" stroke="#00dfff" stroke-width="2"/>
+      <text x="365" y="28" font-family="Arial, sans-serif" font-size="15" text-anchor="middle" fill="#ffffff">🐠 Ocean</text>
+    </g>
+  </g>
+
+  <!-- Group 3: Adventure -->
+  <g id="group3" transform="translate(70, 310)">
+    <!-- Group Header -->
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffd700">✈️ ADVENTURE</text>
+    <line x1="0" y1="8" x2="280" y2="8" stroke="#ffd700" stroke-width="2" opacity="0.6"/>
+
+    <!-- Links Row -->
+    <g transform="translate(0, 25)">
+      <rect x="0" y="0" width="130" height="45" rx="6" fill="#2d3748" stroke="#ffd700" stroke-width="2"/>
+      <text x="65" y="28" font-family="Arial, sans-serif" font-size="15" text-anchor="middle" fill="#ffffff">✈️ Plane</text>
+
+      <rect x="145" y="0" width="160" height="45" rx="6" fill="#2d3748" stroke="#ffd700" stroke-width="2"/>
+      <text x="225" y="28" font-family="Arial, sans-serif" font-size="15" text-anchor="middle" fill="#ffffff">🌃 City Lights</text>
+    </g>
+  </g>
+
+  <!-- Annotation -->
+  <g id="annotation" transform="translate(550, 150)">
+    <rect x="0" y="0" width="250" height="100" rx="8" fill="#ffffff" stroke="#cbd5e0" stroke-width="2"/>
+    <text x="125" y="25" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#1a1a2e">All Options Visible</text>
+    <text x="125" y="45" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#4a5568">✓ No clicking required</text>
+    <text x="125" y="63" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#4a5568">✓ Clear visual groups</text>
+    <text x="125" y="81" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#4a5568">✓ Easy to scan</text>
+
+    <!-- Arrow to nav -->
+    <path d="M 0 50 L -30 50 L -30 -30 L -100 -30" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#arrowhead3)"/>
+  </g>
+
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead3" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#10b981"/>
+    </marker>
+  </defs>
+
+  <!-- Mobile View -->
+  <g id="mobile-view" transform="translate(800, 70)">
+    <!-- Mobile Frame -->
+    <rect x="0" y="0" width="350" height="580" rx="20" fill="#1a1a2e" stroke="#2d3748" stroke-width="3"/>
+    <rect x="10" y="10" width="330" height="560" rx="12" fill="#ffffff"/>
+
+    <!-- Mobile Header -->
+    <rect x="10" y="10" width="330" height="50" rx="12" fill="#16213e"/>
+    <text x="30" y="42" font-family="Arial, sans-serif" font-size="18" fill="#ffffff">☰ Menu</text>
+
+    <!-- Group 1: Celebration -->
+    <g transform="translate(20, 75)">
+      <rect x="0" y="0" width="310" height="30" rx="4" fill="#ffe5e8"/>
+      <text x="10" y="20" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ff4757">🎉 CELEBRATION</text>
+
+      <rect x="10" y="35" width="290" height="40" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="25" y="59" font-family="Arial, sans-serif" font-size="14" fill="#1a1a2e">🎈 Balloons</text>
+
+      <rect x="10" y="80" width="290" height="40" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="25" y="104" font-family="Arial, sans-serif" font-size="14" fill="#1a1a2e">🎉 Confetti</text>
+
+      <rect x="10" y="125" width="290" height="40" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="25" y="149" font-family="Arial, sans-serif" font-size="14" fill="#1a1a2e">🎆 Fireworks</text>
+    </g>
+
+    <!-- Group 2: Nature -->
+    <g transform="translate(20, 260)">
+      <rect x="0" y="0" width="310" height="30" rx="4" fill="#e0f9ff"/>
+      <text x="10" y="20" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#00a8cc">🌿 NATURE</text>
+
+      <rect x="10" y="35" width="290" height="40" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="25" y="59" font-family="Arial, sans-serif" font-size="14" fill="#1a1a2e">🌅 Sunrise</text>
+
+      <rect x="10" y="80" width="290" height="40" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="25" y="104" font-family="Arial, sans-serif" font-size="14" fill="#1a1a2e">☁️ Clouds</text>
+
+      <rect x="10" y="125" width="290" height="40" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="25" y="149" font-family="Arial, sans-serif" font-size="14" fill="#1a1a2e">🐠 Ocean</text>
+    </g>
+
+    <!-- Group 3: Adventure -->
+    <g transform="translate(20, 445)">
+      <rect x="0" y="0" width="310" height="30" rx="4" fill="#fff9e5"/>
+      <text x="10" y="20" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#d4af37">✈️ ADVENTURE</text>
+
+      <rect x="10" y="35" width="290" height="40" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="25" y="59" font-family="Arial, sans-serif" font-size="14" fill="#1a1a2e">✈️ Plane</text>
+
+      <rect x="10" y="80" width="290" height="40" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="25" y="104" font-family="Arial, sans-serif" font-size="14" fill="#1a1a2e">🌃 City Lights</text>
+    </g>
+
+    <!-- Mobile Label -->
+    <text x="175" y="645" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#4a5568">Mobile View (Scrollable)</text>
+  </g>
+
+  <!-- Features List -->
+  <g id="features" transform="translate(50, 460)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1a1a2e">Key Features:</text>
+
+    <circle cx="5" cy="25" r="4" fill="#10b981"/>
+    <text x="20" y="30" font-family="Arial, sans-serif" font-size="14" fill="#4a5568">⭐ All options immediately visible - best discoverability</text>
+
+    <circle cx="5" cy="50" r="4" fill="#10b981"/>
+    <text x="20" y="55" font-family="Arial, sans-serif" font-size="14" fill="#4a5568">⭐ Clear visual hierarchy with color-coded groups</text>
+
+    <circle cx="5" cy="75" r="4" fill="#10b981"/>
+    <text x="20" y="80" font-family="Arial, sans-serif" font-size="14" fill="#4a5568">⭐ Simple implementation - easiest to build</text>
+
+    <circle cx="5" cy="100" r="4" fill="#10b981"/>
+    <text x="20" y="105" font-family="Arial, sans-serif" font-size="14" fill="#4a5568">⭐ No learning curve - familiar list pattern</text>
+
+    <circle cx="5" cy="125" r="4" fill="#fbbf24"/>
+    <text x="20" y="130" font-family="Arial, sans-serif" font-size="14" fill="#4a5568">Uses more screen space (especially on mobile with scroll)</text>
+
+    <text x="0" y="165" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#10b981">✓ RECOMMENDED OPTION</text>
+    <text x="0" y="185" font-family="Arial, sans-serif" font-size="13" fill="#4a5568">Best balance of simplicity, usability, and implementation speed</text>
+  </g>
+</svg>

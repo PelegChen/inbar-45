@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600">
+  <!-- Background -->
+  <rect width="1200" height="600" fill="#f8f9fa"/>
+
+  <!-- Title -->
+  <text x="600" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#1a1a2e">
+    Option 2: Tabbed Navigation (Desktop)
+  </text>
+
+  <!-- Tab Bar Container -->
+  <rect x="50" y="80" width="1100" height="50" rx="8 8 0 0" fill="#e2e8f0"/>
+
+  <!-- Tab 1: Celebration (Active) -->
+  <g id="tab1-active">
+    <rect x="60" y="85" width="200" height="45" rx="8 8 0 0" fill="#ff4757"/>
+    <text x="160" y="113" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#ffffff">🎉 Celebration</text>
+  </g>
+
+  <!-- Tab 2: Nature (Inactive) -->
+  <g id="tab2">
+    <rect x="270" y="90" width="180" height="40" rx="8 8 0 0" fill="#cbd5e0"/>
+    <text x="360" y="115" font-family="Arial, sans-serif" font-size="15" text-anchor="middle" fill="#4a5568">🌿 Nature</text>
+  </g>
+
+  <!-- Tab 3: Adventure (Inactive) -->
+  <g id="tab3">
+    <rect x="460" y="90" width="180" height="40" rx="8 8 0 0" fill="#cbd5e0"/>
+    <text x="550" y="115" font-family="Arial, sans-serif" font-size="15" text-anchor="middle" fill="#4a5568">✈️ Adventure</text>
+  </g>
+
+  <!-- Content Area -->
+  <rect x="50" y="130" width="1100" height="80" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+
+  <!-- Navigation Links in Active Tab -->
+  <g id="tab-content">
+    <!-- Link 1 -->
+    <rect x="80" y="150" width="160" height="40" rx="6" fill="#ffe5e8" stroke="#ff4757" stroke-width="2"/>
+    <text x="160" y="175" font-family="Arial, sans-serif" font-size="15" text-anchor="middle" fill="#1a1a2e">🎈 Balloons</text>
+
+    <!-- Link 2 -->
+    <rect x="260" y="150" width="160" height="40" rx="6" fill="#ffe5e8" stroke="#ff4757" stroke-width="2"/>
+    <text x="340" y="175" font-family="Arial, sans-serif" font-size="15" text-anchor="middle" fill="#1a1a2e">🎉 Confetti</text>
+
+    <!-- Link 3 -->
+    <rect x="440" y="150" width="160" height="40" rx="6" fill="#ffe5e8" stroke="#ff4757" stroke-width="2"/>
+    <text x="520" y="175" font-family="Arial, sans-serif" font-size="15" text-anchor="middle" fill="#1a1a2e">🎆 Fireworks</text>
+  </g>
+
+  <!-- Transition Arrow -->
+  <path d="M 360 240 L 360 270" stroke="#00dfff" stroke-width="3" fill="none" marker-end="url(#arrowhead2)"/>
+  <text x="380" y="260" font-family="Arial, sans-serif" font-size="14" fill="#00dfff">Click "Nature" tab</text>
+
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#00dfff"/>
+    </marker>
+  </defs>
+
+  <!-- After clicking Nature tab -->
+  <g id="after-click" transform="translate(0, 190)">
+    <!-- Tab Bar Container -->
+    <rect x="50" y="80" width="1100" height="50" rx="8 8 0 0" fill="#e2e8f0"/>
+
+    <!-- Tab 1: Celebration (Inactive) -->
+    <rect x="60" y="90" width="200" height="40" rx="8 8 0 0" fill="#cbd5e0"/>
+    <text x="160" y="115" font-family="Arial, sans-serif" font-size="15" text-anchor="middle" fill="#4a5568">🎉 Celebration</text>
+
+    <!-- Tab 2: Nature (Active) -->
+    <rect x="270" y="85" width="180" height="45" rx="8 8 0 0" fill="#00dfff"/>
+    <text x="360" y="113" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#1a1a2e">🌿 Nature</text>
+
+    <!-- Tab 3: Adventure (Inactive) -->
+    <rect x="460" y="90" width="180" height="40" rx="8 8 0 0" fill="#cbd5e0"/>
+    <text x="550" y="115" font-family="Arial, sans-serif" font-size="15" text-anchor="middle" fill="#4a5568">✈️ Adventure</text>
+
+    <!-- Content Area -->
+    <rect x="50" y="130" width="1100" height="80" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+
+    <!-- Navigation Links in Active Tab -->
+    <!-- Link 1 -->
+    <rect x="80" y="150" width="160" height="40" rx="6" fill="#e0f9ff" stroke="#00dfff" stroke-width="2"/>
+    <text x="160" y="175" font-family="Arial, sans-serif" font-size="15" text-anchor="middle" fill="#1a1a2e">🌅 Sunrise</text>
+
+    <!-- Link 2 -->
+    <rect x="260" y="150" width="160" height="40" rx="6" fill="#e0f9ff" stroke="#00dfff" stroke-width="2"/>
+    <text x="340" y="175" font-family="Arial, sans-serif" font-size="15" text-anchor="middle" fill="#1a1a2e">☁️ Clouds</text>
+
+    <!-- Link 3 -->
+    <rect x="440" y="150" width="160" height="40" rx="6" fill="#e0f9ff" stroke="#00dfff" stroke-width="2"/>
+    <text x="520" y="175" font-family="Arial, sans-serif" font-size="15" text-anchor="middle" fill="#1a1a2e">🐠 Ocean</text>
+  </g>
+
+  <!-- Mobile View -->
+  <g id="mobile-view" transform="translate(750, 80)">
+    <!-- Mobile Frame -->
+    <rect x="0" y="0" width="350" height="400" rx="20" fill="#1a1a2e" stroke="#2d3748" stroke-width="3"/>
+    <rect x="10" y="10" width="330" height="380" rx="12" fill="#f8f9fa"/>
+
+    <!-- Horizontal Scrollable Tabs -->
+    <rect x="15" y="15" width="320" height="55" rx="8" fill="#ffffff"/>
+
+    <!-- Tabs (scrollable) -->
+    <rect x="25" y="25" width="140" height="35" rx="6" fill="#ff4757"/>
+    <text x="95" y="47" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#ffffff">🎉 Celebration</text>
+
+    <rect x="175" y="28" width="110" height="29" rx="6" fill="#e2e8f0"/>
+    <text x="230" y="47" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#4a5568">🌿 Nature</text>
+
+    <rect x="295" y="28" width="120" height="29" rx="6" fill="#e2e8f0"/>
+    <text x="355" y="47" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#4a5568">✈️ Adven…</text>
+
+    <!-- Scroll indicator -->
+    <text x="300" y="47" font-family="Arial, sans-serif" font-size="14" fill="#a0aec0">→</text>
+
+    <!-- Content Cards -->
+    <rect x="25" y="85" width="290" height="60" rx="8" fill="#ffffff" stroke="#ff4757" stroke-width="2"/>
+    <text x="170" y="120" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#1a1a2e">🎈 Balloons</text>
+
+    <rect x="25" y="155" width="290" height="60" rx="8" fill="#ffffff" stroke="#ff4757" stroke-width="2"/>
+    <text x="170" y="190" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#1a1a2e">🎉 Confetti</text>
+
+    <rect x="25" y="225" width="290" height="60" rx="8" fill="#ffffff" stroke="#ff4757" stroke-width="2"/>
+    <text x="170" y="260" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#1a1a2e">🎆 Fireworks</text>
+
+    <!-- Mobile Label -->
+    <text x="175" y="375" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#4a5568">Mobile View</text>
+  </g>
+
+  <!-- Features List -->
+  <g id="features" transform="translate(50, 480)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1a1a2e">Key Features:</text>
+
+    <circle cx="5" cy="25" r="4" fill="#10b981"/>
+    <text x="20" y="30" font-family="Arial, sans-serif" font-size="14" fill="#4a5568">All links in active group visible at once - no dropdown needed</text>
+
+    <circle cx="5" cy="50" r="4" fill="#10b981"/>
+    <text x="20" y="55" font-family="Arial, sans-serif" font-size="14" fill="#4a5568">Modern, app-like interface with clear visual separation</text>
+
+    <circle cx="5" cy="75" r="4" fill="#fbbf24"/>
+    <text x="20" y="80" font-family="Arial, sans-serif" font-size="14" fill="#4a5568">Uses more vertical space for tab bar and content area</text>
+
+    <circle cx="5" cy="100" r="4" fill="#ef4444"/>
+    <text x="20" y="105" font-family="Arial, sans-serif" font-size="14" fill="#4a5568">Initial view shows only one group's links (others hidden)</text>
+  </g>
+</svg>
