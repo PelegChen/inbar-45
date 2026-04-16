@@ -1,22 +1,14 @@
 import React from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Greeting1 from './pages/Greeting1';
-import Greeting2 from './pages/Greeting2';
-import Greeting3 from './pages/Greeting3';
-import Greeting4 from './pages/Greeting4';
-import Greeting5 from './pages/Greeting5';
-import Greeting6 from './pages/Greeting6';
-import Greeting7 from './pages/Greeting7';
-import Greeting8 from './pages/Greeting8';
+ 
+import Greeting7 from './pages/MainPage'; 
 import { GreetingProvider } from './context/GreetingProvider';
 
 function App() {
   return (
     <GreetingProvider>
       <Router>
-        <div className="relative w-full m-0 p-0">
-          <Navbar />
+        <div className="relative w-full m-0 p-0"> 
           <main>
             <Routes>
               <Route path="/" element={<Greeting1 />} />
